@@ -1,11 +1,11 @@
 /* global Log, Module, MM */
 /* Magic Mirror
- * Module: MMM-admin-interface
+ * Module: iMirror-interface
  *
- * By ItayXD
+ * Quelle von ItalyXD geändert durch Zare90
  * GPL-3.0 Licensed.
  */
-Module.register( "MMM-Admin-Interface", {
+Module.register( "iMirror-Interface", {
 	requiresVersion: "2.0.0",
 
 	defaults: {
