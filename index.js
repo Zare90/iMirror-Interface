@@ -2,7 +2,7 @@ var html = "<!DOCTYPE html>\n\
 <html>\n\
 	<head>\n\
 		<meta charset=\"utf-8\" />\n\
-		<title>Magic Mirror Settings</title>\n\
+		<title>iMirror Einstellungen</title>\n\
 		<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n\
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>\n\
 		<script src=\"jsoneditor.js\"></script>\n\
@@ -10,11 +10,11 @@ var html = "<!DOCTYPE html>\n\
 	<body>\n\
 		<div class=\"container\">\n\
 		<div class='page-header'>\n\
-				<h1>Magic Mirror² Admin Interface</h1>\n\
+				<h1>iMirror Admin Interface</h1>\n\
 		</div>\n\
 		<p>\n\
-			<button id='submit' class='btn btn-primary'>Save settings</button>\n\
-			<button id='restore' class='btn btn-info'>Restore to Default</button>\n\
+			<button id='submit' class='btn btn-primary'>Einstellungen Speichern</button>\n\
+			<button id='restore' class='btn btn-info'>Zurücksetzen</button>\n\
 			<span id='valid_indicator' class='label'></span>\n\
 		</p>\n\
 		<p>\n\
@@ -50,7 +50,7 @@ var html = "<!DOCTYPE html>\n\
 			document.getElementById( \"submit\" ).addEventListener( \"click\", function() {\n\
 				var xhr = new XMLHttpRequest();\n\
 				var config = JSON.stringify( editor.getValue(), null, \"\t\" );\n\
-				xhr.open( \"POST\", \"/MMM-Admin-Interface/\", true );\n\
+				xhr.open( \"POST\", \"/iMirror-Interface/\", true );\n\
 				xhr.onreadystatechange = function() {\n\
 					var progress_bar = document.getElementById( \"progress_bar\" );\n\
 					var result_status = document.getElementById( \"result_status\" );\n\
