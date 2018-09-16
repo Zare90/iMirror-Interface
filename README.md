@@ -1,72 +1,32 @@
-# Magic-Mirror-Module-Admin-Interface
-This an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror). This module provides an interface to manage the magic mirror and edit the configuration from your web browser.
+# iMirror-Interface
+
 
 ## Installation
-1. Navigate into your MagicMirror's `modules` folder and run: 
+1. Im Terminal Ordner MagicMirror und den Ordner modules öffnen, dann folgenden Befehl und Link eingeben:
     ```
     git clone https://github.com/ItayXD/MMM-Admin-Interface.git
     ```
-1. Install the dependencies: 
+1. Modul installieren: 
     ```
-    cd MMM-Admin-Interface && npm install --only=production
+    cd iMirror-Interface && npm install 
     ```
-1. Add the module to you `config.js`:
+1. Modul hinzufügen in `config.js`:
     ```
         {
-        	"module": "MMM-Admin-Interface"
+        	"module": "iMirror-Interface"
         },
     ```
-1. Whitelist the devices you want to access the mirror's settings from.
-   If you want to whitelist all devices on your local network add:
+1. IP-Adressen der Geräte in die Whitelist hinzufügen um diese zu erlauben:
    ``` 
         ipWhitelist: [""127.0.0.1", "::ffff:127.0.0.1", "::1", 192.168.X.1/24 , ::ffff:192.168.X.1/24"], 
    ```
-   Make sure you replace `X` with the correct number! you can find it by running `ifconfig` in your mirror.
+  Um alle IP-Adressen zu erlauben alles leer lassen:
+  ```
+   ipWhitelist: [ ],
+   ```
 
-## Usage
-1. Go to `<HOST>:8080/MMM-Admin-Interface/`
-1. Edit away!
+## Benutzung
+1. Im Browser eingeben: `<HOST>:8080/iMirror-Interface/`
+1. Bearbeiten!
 
-## Sending settings schema for other modules (DEVS)
-You can send your module's config schema via notification, and it will be loaded.
-```javascript
-let calender_schema = {
-    "properties": {"modules": {"items": {"config": {"properties": {
-        "calendars": {
-        	"format": "tabs",
-        	"options": {
-        		"disable_array_delete_all_rows": true,
-        		"disable_array_delete_last_row": true
-        	},
-        	"type": "array",
-        	"items": {
-        		"type": "object",
-        		"headerTemplate": "Calender {{ i1 }}",
-        		"properties": {
-        			"symbol": {
-        				"type": "string"
-        			},
-        			"url": {
-        				"type": "string"
-        			}
-        		}
-        	}
-    }}}}}}
-}
-this.sendNotification ( "schema", calender_schema );
-```
 
-You can learn more on writing a settings schema for you module at [JSON Editor](https://github.com/jdorn/json-editor).
-
-## Changlelog
-
-### 0.1
- - Cleaning up all console.log dev calls
- - Improved front-end
- - Improved README
-
-### 0.0.2
- - Reading and writing directly to config.js
- - Accept settings schemas from other modules via notification
-
-### 0.0.1 Initial commit
