@@ -4,7 +4,7 @@
 ## Installation
 1. Im Terminal Ordner MagicMirror und den Ordner modules öffnen, dann folgenden Befehl und Link eingeben:
     ```
-    git clone https://github.com/ItayXD/MMM-Admin-Interface.git
+    git clone https://github.com/Zare90/iMirror-Interface.git
     ```
 1. Modul installieren: 
     ```
